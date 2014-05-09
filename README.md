@@ -4,7 +4,7 @@ Proofing, testing, documentation for Clojure
 
 ## Colbert Logic
 
-Instead of true and false, we have truthy and falsey.
+Instead of truth, truthiness; instead of true and false, truthy and falsey.
 
 Only one logical operator, "andy".  Defined by the following truthiness table:
 
