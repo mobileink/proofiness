@@ -22,7 +22,7 @@ In any case, given a function like `add2`, we can in principle derive an infinit
 
 But a partial proof is better than no proof.
 
-> What's the point?  Just that a conceptual shift from testing to proving is possible and has benefits, even though we cannot provide genuine formal proofs of the correctness of Clojure code.
+> What's the point?  Just that a conceptual shift from testing to proving is possible and has benefits, even though we cannot provide complete formal proofs of the correctness of Clojure code.  Tests as theorems nonetheless should be counted as genuine partial proofs.  Not formal proofs (since for that we would have to prove the correctness of the Clojure compiler and runtime, among other things), but pragmatic proofs: in practice, we assume that a program that passes its unit tests is correct, at least for those bits that are tested.  So we should treat tests as (potential) proofs.  "Potential" because they only become actual proofs when executed.
 
 ## Colbert Logic
 
