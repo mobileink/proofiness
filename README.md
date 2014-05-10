@@ -26,6 +26,10 @@ But a partial proof is better than no proof.
 
 > Or maybe this is the point: we can learn a thing or two about programs and proofs from what researchers and designers working on proof assistants, automated theorem provers, and the like have learned.  Clojure is not a proof system, there's no point in even trying to formally prove anything about Clojure programs; but nonetheless it is functional, side-effect free by default, has immutable data, etc. all of which means that good informal reasoning about Clojure programs is, well, reasonable.  Even if we cannot use automated proof procedures and so forth, we can steal the expressive bits from these languages.  And the same goes for non-constructive proofy stuff like Z and other ZFC-based logic systems.  We should be pillaging those villages for their valuables.
 
+### Proof and Proofiness
+
+The general idea here is that programmers should move in the general direction of proof (or proof theory, or something in that general vicinity).  So the obvious question is: what is a proof?  And the answer is: well, that's a little complicated.  Over the course of the 20th century the concept of mathematical/logical proof underwent major transformations; only recently has the notion begun to converge in a practical way with the concept of programming.  It must be admitted that the details are a little hairy, but on the other hand, so much has been written that it should be possible to present the bits of theory we need in a pleasing and digestible way that will not frighten off the average programmer.  In the end the concepts are simple, amazingly so; but they do require a major conceptual reorientation, which is not the easiest thing in the world to pull off.
+
 ## Colbert Logic
 
 Instead of truth, truthiness; instead of true and false, truthy and falsey.
