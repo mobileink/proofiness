@@ -30,6 +30,31 @@ But a partial proof is better than no proof.
 
 The general idea here is that programmers should move in the general direction of proof (or proof theory, or something in that general vicinity).  So the obvious question is: what is a proof?  And the answer is: well, that's a little complicated.  Over the course of the 20th century the concept of mathematical/logical proof underwent major transformations; only recently has the notion begun to converge in a practical way with the concept of programming.  It must be admitted that the details are a little hairy, but on the other hand, so much has been written that it should be possible to present the bits of theory we need in a pleasing and digestible way that will not frighten off the average programmer.  In the end the concepts are simple, amazingly so; but they do require a major conceptual reorientation, which is not the easiest thing in the world to pull off.
 
+#### Classic Proof (and Truth)
+
+#### Intuitionistic Proof
+
+#### Constructive Proof
+
+#### Proof Theory
+
+#### BHK
+
+A proposition is:
+* a problem to be solved
+* a task to be accomplished
+* I forget the third one.
+
+To this we can add any number of similar metaphors or analogies:
+* A destination to be reached
+* A riddle to be answered
+* A puzzled to be solved
+* others?
+
+So what?  What's the relevance to the concrete task of getting to better Clojure programming?  I dunno, frankly, but maybe the relevance is that this gives us different ways to think of our API design and documentation, unit testing, etc.
+
+#### HoTT
+
 ## Colbert Logic
 
 Instead of truth, truthiness; instead of true and false, truthy and falsey.
