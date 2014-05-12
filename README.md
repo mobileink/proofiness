@@ -1,4 +1,14 @@
-proofiness
-==========
+# proofiness
 
-Proofing, testing, documentation for Clojure
+A Clojure QA library supporting test/proof and documentation facilities
+
+## Usage
+
+FIXME
+
+## License
+
+Copyright © 2014 FIXME
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
