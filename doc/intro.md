@@ -8,6 +8,7 @@
 * [clojure.tools.reader](https://github.com/clojure/tools.reader)
 * [clojure.tools.namespace](https://github.com/clojure/tools.namespace)
 
+* [clojure.core.unify](https://github.com/clojure/core.unify)
 * [clojure.core.logic](https://github.com/clojure/core.logic)
 * [clojure.core.typed](https://github.com/clojure/core.typed)
 * [Typed Clojure Project](http://typedclojure.org/)
