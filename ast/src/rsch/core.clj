@@ -74,13 +74,16 @@
                (format "%s : %s :: "
                        (foo :type) (foo :op))))
 
-(defn postx [foo] (print
-               (format "%s : %s\n"
-                       (foo :form) (foo :children))))
+(defn postproc [node]
+  (do (print
+       (format "%s / %s\n"
+               (node :form) (node :children)))
+
+      ))
 
 (defn foo [x] (do (pre x) (postx x)))
 
-(ast/postwalk (ast/nodes l-ast) postx)
+(ast/postwalk l-ast postproc)
 
 ;; (pp/pprint (first (ast/nodes l-ast)))
 
