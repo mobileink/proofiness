@@ -1,4 +1,4 @@
-(ns rsch.core-test
+(ns ast.core-test
 ;;(ns clojure.tools.analyzer.core-test
   (:refer-clojure :exclude [macroexpand-1])
   (:require [rsch.core :refer :all]
