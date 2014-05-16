@@ -1,6 +1,8 @@
-(ns data-all-the-asts-talk.core)
+(ns ast.baldrige)
 
 ;; from https://github.com/halgari/data-all-the-asts
+
+;; with addition notes by GAR
 
 ;; When compilers often consist of at least three phases:
 ;; 1. Lexer/Parser
@@ -21,8 +23,28 @@
 ;; Lexer/Parser is the reader, and we can invoke the analyzer via Java
 ;; interop:
 
-
+;; in https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Compiler.java
+;; ln306:  public enum C{
+;; 	STATEMENT,  //value ignored
+;; 	EXPRESSION, //value required
+;; 	RETURN,      //tail position relative to enclosing recur frame
+;; 	EVAL
+;; }
+;; ln6405: public static Expr analyze(C context, Object form)
 (clojure.lang.Compiler/analyze clojure.lang.Compiler$C/EXPRESSION '(+ 1 2))
+;; #<StaticMethodExpr clojure.lang.Compiler$StaticMethodExpr@62b08658>
+;; ln1653:
+;; static class StaticMethodExpr extends MethodExpr
+;; methods:
+;; public Object eval
+;; public boolean canEmitPrimitive
+;; public boolean canEmitIntrinsicPredicate
+;; public void emitIntrinsicPredicate
+;; public void emitUnboxed
+;; public void emit
+;; public boolean hasJavaClass
+;; public Class getJavaClass
+;; etc.
 
 ;; This returns a instance of StaticMethodExpr. Okay, what on earth is
 ;; that?
@@ -42,6 +64,9 @@
              (do 44 43)]]
   (doall (map #(clojure.lang.Compiler/analyze clojure.lang.Compiler$C/EXPRESSION %) exprs)))
 
+;; (#<NumberExpr clojure.lang.Compiler$NumberExpr@75897d53>
+;;  #<StaticMethodExpr clojure.lang.Compiler$StaticMethodExpr@1583106e>
+;;  #<BodyExpr clojure.lang.Compiler$BodyExpr@10e3c6a3>)
 
 
 ;; This idea of using types to represent ASTs is not new. Example from
@@ -142,6 +167,7 @@
  :value 42
  :type :integer}
 
+
 ;; That's simple, what about a if?
 
 {:op :if
@@ -210,9 +236,9 @@
         (let [value (get ast key)]
           (if (vector? value)
             (assoc acc key (doall (map (fn [node]
-                                         (prewalk node f))
+                                         (postwalk node f))
                                        value)))
-            (assoc acc key (prewalk value f)))))
+            (assoc acc key (postwalk value f)))))
       ast
       (:children ast))))
 
@@ -224,7 +250,6 @@
 (postwalk test-ast (fn [ast]
                     (println (:op ast))
                     [:replaced]))
-
 
 
 
